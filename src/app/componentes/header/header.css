@@ -1,0 +1,59 @@
+.dypolar-header {
+  background-color: var(--dypolar-branco);
+  border-bottom: 1px solid var(--dypolar-borda);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dypolar-azul-escuro);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dypolar-cinza-texto);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--dypolar-azul-primario);
+}
+
+.nav-links .premium-link {
+  color: #d97706;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}

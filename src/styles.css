@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importando uma fonte sem serifa limpa (Inter ou Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Paleta base recomendada */
+  --dypolar-azul-escuro: #0f172a; /* Cor principal de texto e footer */
+  --dypolar-azul-primario: #1d4ed8; /* Cor de destaque (botões, links) */
+  --dypolar-azul-hover: #1e3a8a;
+  --dypolar-fundo-claro: #f8fafc; /* Fundo principal */
+  --dypolar-branco: #ffffff; /* Fundo de cards */
+  --dypolar-cinza-texto: #475569;
+  --dypolar-borda: #e2e8f0;
+  --dypolar-sucesso: #10b981; /* Para tags de compatibilidade */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--dypolar-fundo-claro);
+  color: var(--dypolar-azul-escuro);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilitários Globais */
+.btn-primary {
+  background-color: var(--dypolar-azul-primario);
+  color: var(--dypolar-branco);
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--dypolar-azul-hover);
+}

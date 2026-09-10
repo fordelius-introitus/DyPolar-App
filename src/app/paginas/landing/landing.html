@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="landing-page">
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Encontre quem estuda como você.</h1>
+        <p>A DyPolar conecta você a grupos de estudo compatíveis com seus objetivos, interesses, disponibilidade e região.</p>
+        <button class="btn-primary btn-large" (click)="irParaExplorar()">Explorar grupos</button>
+      </div>
+      <div class="hero-image-placeholder">
+        <div class="mock-image">[Ilustração de Comunidade Acadêmica]</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="como-funciona-section">
+    <div class="container">
+      <div class="text-center">
+        <h2>Como a DyPolar funciona</h2>
+        <p class="subtitle">Concentre comunidade, materiais e descoberta acadêmica em um único ambiente.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Defina seu objetivo</h3>
+          <p>Diga o que você está estudando e como prefere aprender.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Encontre grupos</h3>
+          <p>Receba recomendações de comunidades compatíveis com seu perfil.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Estude junto</h3>
+          <p>Acesse materiais, fóruns e marque encontros com o grupo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destaques-section">
+    <div class="container">
+      <h2>Comunidades em Destaque</h2>
+      <div class="grupos-grid">
+        <div class="mock-group-card">
+          <h4>Preparação ITA - Física</h4>
+          <span class="tag">Foco Acadêmico</span>
+          <p>Grupo focado em mecânica e dinâmica para provas militares.</p>
+        </div>
+        <div class="mock-group-card">
+          <h4>Cálculo I - UFBA</h4>
+          <span class="tag">Universidade</span>
+          <p>Resolução de listas e estudo de limites e derivadas.</p>
+        </div>
+        <div class="mock-group-card">
+          <h4>Programação Competitiva</h4>
+          <span class="tag">Tecnologia</span>
+          <p>Algoritmos, estruturas de dados e otimização em C/C++.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-teaser-section">
+    <div class="container premium-flex">
+      <div class="premium-text">
+        <h2>Leve seus estudos ao próximo nível</h2>
+        <p>Assine a DyPolar Premium para acessar nosso acervo exclusivo de materiais licenciados e ganhar descontos na nossa loja de livros físicos</p>
+        <p class="preco-ilustrativo">Apenas R$ 14,90/mês</p>
+        <button class="btn-secondary" (click)="irParaPremium()">Ver benefícios Premium</button>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

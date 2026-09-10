@@ -1,0 +1,131 @@
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--dypolar-branco);
+}
+
+.login-image-panel {
+  flex: 1;
+  background-image: url('/img/background-2.png');
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--dypolar-branco);
+  text-align: center;
+}
+
+.login-logo {
+  height: 72px;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (min-width: 768px) {
+  .login-image-panel {
+    display: flex;
+  }
+}
+
+.branding-overlay h2 {
+  font-size: 3rem;
+  color: var(--dypolar-branco);
+}
+
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--dypolar-cinza-texto);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--dypolar-azul-primario);
+}
+
+.login-logo {
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+.login-header {
+   margin-bottom: 2rem;
+   text-align: center;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  color: var(--dypolar-azul-escuro);
+}
+
+.login-header p {
+  color: var(--dypolar-cinza-texto);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dypolar-azul-escuro);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--dypolar-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--dypolar-azul-primario);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dypolar-cinza-texto);
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--dypolar-azul-primario);
+  text-decoration: none;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+}

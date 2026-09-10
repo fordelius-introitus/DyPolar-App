@@ -1,0 +1,16 @@
+<header class="dypolar-header">
+  <div class="header-container">
+    <a routerLink="/" class="logo">
+        <img src="img/dypolar-1.png" alt="DyPolar Logo" class="logo-img" />
+    </a>
+
+    <nav class="nav-links desktop-only">
+      <a routerLink="/explorar" routerLinkActive="active">Explorar Grupos</a>
+      <a routerLink="/acervo" routerLinkActive="active">Acervo</a>
+      <a routerLink="/premium" class="premium-link" routerLinkActive="active">Premium</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-primary" (click)="irParaLogin()">Entrar</button>
+    </div>
+  </div>
+</header>

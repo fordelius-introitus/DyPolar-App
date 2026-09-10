@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-image-panel">
+    <div class="branding-overlay">
+      <h2>DyPolar</h2>
+      <p>Sua comunidade acadêmica começa aqui.</p>
+    </div>
+  </div>
+
+  <div class="login-form-panel">
+    <div class="form-wrapper">
+      <a routerLink="/" class="back-link">← Voltar para o início</a>
+      
+      <div class="login-header">
+        <img src="img/dypolar-1.png" alt="DyPolar Logo" class="login-logo" />
+        <h1>Bem-vindo de volta</h1>
+        <p>Entre para acessar seus grupos de estudo.</p>
+      </div>
+
+      <form (submit)="fazerLogin($event)" class="login-form">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="nome@universidade.edu.br" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" placeholder="••••••••" required />
+        </div>
+
+        <div class="form-actions">
+          <label class="checkbox-label">
+            <input type="checkbox" />
+            <span>Salvar usuário</span>
+          </label>
+          <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>
