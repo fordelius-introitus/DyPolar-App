@@ -11,7 +11,7 @@ import { HeaderComponent } from "../../componentes/header/header";
   templateUrl: './landing.html',
   styleUrls: ['./landing.css']
 })
-export class LandingComponent {
+export class Landing {
   
   constructor(private router: Router) {}
 

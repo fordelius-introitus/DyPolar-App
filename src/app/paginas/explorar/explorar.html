@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="explorar-page">
+    <div class="filters-container">
+        <h2>Filtros</h2>
+        <div class="search-wrapper">
+            <label for="busca-assunto"><b>Buscar:</b></label>
+            <input type="text" class="search-bar" placeholder="Física, História, Programação..."> 
+        </div>
+        <div class="modalidades-wrapper">
+            <label for="buscar-modalidade"><b>Modalidade:</b></label>
+            <select class="modalidades-select">
+                <option>Todas</option>
+                <option>Exatas</option>
+                <option>Humanas</option>
+                <option>Olimpíadas</option>
+                <option>Matemática</option>
+                <option>Física</option>
+                <option>Preparação</option>
+                <option>Filosofia</option>
+                <option>Geografia</option>
+            </select>
+        </div>
+        <div class="categorias-wrapper">
+    <label class="categorias-titulo"><b>Categorias Rápidas:</b></label>
+    
+    <div class="categoria-checkboxes">
+        <label class="checkbox-item">
+            <input type="checkbox" />
+            <span>Vestibulares</span>
+        </label>
+        
+        <label class="checkbox-item">
+            <input type="checkbox" />
+            <span>Faculdade</span>
+        </label>
+        
+        <label class="checkbox-item">
+            <input type="checkbox" />
+            <span>Idiomas</span>
+        </label>
+        
+        <label class="checkbox-item">
+            <input type="checkbox" />
+            <span>Programação</span>
+        </label>
+    </div>
+    <button class="apply-filters"><b>Aplicar Filtros</b></button>
+</div>
+    </div>
+    
+    <div class="groups-container">
+        <h2>Grupos</h2>
+        <p><b>Baseado no seu perfil de estudos</b></p>
+        <div class="cards-grid">
+            <div class="cards" *ngFor="let grupo of grupos">
+                <div class="card-header">
+                    <h3>{{ grupo.titulo }}</h3>
+                    <span class="tag-compatibilidade">{{ grupo.compatibilidade }}%</span>
+                </div>
+                <img [src]="grupo.img" [alt]="grupo.titulo" class="card-banner">
+                
+                <div class="card-body">
+                    <p>{{ grupo.descricao }}</p>
+                    <button class="btn-primary">Ver Grupo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

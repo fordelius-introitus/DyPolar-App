@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { LandingComponent } from './paginas/landing/landing';
-import { LoginComponent } from './paginas/login/login';
+import { Landing } from './paginas/landing/landing';
+import { Login } from './paginas/login/login';
+import { Explorar } from './paginas/explorar/explorar';
 
 export const routes: Routes = [
-  { path: 'home', component: LandingComponent },
-  { path: 'login', component: LoginComponent},
+  { path: 'home', component: Landing },
+  { path: 'login', component: Login },
+  { path: 'explorar', component: Explorar},
   { path: '**', redirectTo: 'login' }
 ];
