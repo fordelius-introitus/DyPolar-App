@@ -1,67 +1,65 @@
 <app-header></app-header>
 <div class="explorar-page">
+    
+    
     <div class="filters-container">
         <h2>Filtros</h2>
+        
         <div class="search-wrapper">
             <label for="busca-assunto"><b>Buscar:</b></label>
-            <input type="text" class="search-bar" placeholder="Física, História, Programação..."> 
+            <input type="text" id="busca-assunto" class="search-bar" placeholder="Física, História, Programação..." [(ngModel)]="termoBusca"> 
         </div>
+        
         <div class="modalidades-wrapper">
             <label for="buscar-modalidade"><b>Modalidade:</b></label>
-            <select class="modalidades-select">
-                <option>Todas</option>
-                <option>Exatas</option>
-                <option>Humanas</option>
-                <option>Olimpíadas</option>
-                <option>Matemática</option>
-                <option>Física</option>
-                <option>Preparação</option>
-                <option>Filosofia</option>
-                <option>Geografia</option>
+            <select id="buscar-modalidade" class="modalidades-select" [(ngModel)]="modalidadeSelecionada">
+                <option value="Todas">Todas</option>
+                <option value="Online">Online</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Híbrido">Híbrido</option>
             </select>
         </div>
+        
         <div class="categorias-wrapper">
-    <label class="categorias-titulo"><b>Categorias Rápidas:</b></label>
-    
-    <div class="categoria-checkboxes">
-        <label class="checkbox-item">
-            <input type="checkbox" />
-            <span>Vestibulares</span>
-        </label>
-        
-        <label class="checkbox-item">
-            <input type="checkbox" />
-            <span>Faculdade</span>
-        </label>
-        
-        <label class="checkbox-item">
-            <input type="checkbox" />
-            <span>Idiomas</span>
-        </label>
-        
-        <label class="checkbox-item">
-            <input type="checkbox" />
-            <span>Programação</span>
-        </label>
+            <label class="categorias-titulo"><b>Categorias Rápidas:</b></label>
+            <div class="categoria-checkboxes">
+                <label class="checkbox-item">
+                    <input type="checkbox" [(ngModel)]="categorias.vestibulares" />
+                    <span>Vestibulares</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" [(ngModel)]="categorias.faculdade" />
+                    <span>Faculdade</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" [(ngModel)]="categorias.idiomas" />
+                    <span>Idiomas</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" [(ngModel)]="categorias.programacao" />
+                    <span>Programação</span>
+                </label>
+            </div>
+            <button class="apply-filters" (click)="aplicarFiltros()"><b>Aplicar Filtros</b></button>
+        </div>
     </div>
-    <button class="apply-filters"><b>Aplicar Filtros</b></button>
-</div>
-    </div>
-    
     <div class="groups-container">
         <h2>Grupos</h2>
         <p><b>Baseado no seu perfil de estudos</b></p>
         <div class="cards-grid">
-            <div class="cards" *ngFor="let grupo of grupos">
-                <div class="card-header">
-                    <h3>{{ grupo.titulo }}</h3>
-                    <span class="tag-compatibilidade">{{ grupo.compatibilidade }}%</span>
+            <div class="cards" *ngFor="let grupo of gruposFiltrados">
+                <div class="card-image-wrapper">
+                    <img [src]="grupo.img" [alt]="grupo.titulo" class="card-banner">
+                    <div class="card-header">
+                        <h3>{{ grupo.titulo }}</h3>
+                        <span class="tag-compatibilidade">{{ grupo.compatibilidade }}%</span>
+                    </div>
                 </div>
-                <img [src]="grupo.img" [alt]="grupo.titulo" class="card-banner">
+                
                 
                 <div class="card-body">
                     <p>{{ grupo.descricao }}</p>
-                    <button class="btn-primary">Ver Grupo</button>
+                    <button class="apply-filters">Ver Grupo</button>
                 </div>
             </div>
         </div>
