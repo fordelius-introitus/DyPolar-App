@@ -1,16 +1,20 @@
 <header class="dypolar-header">
   <div class="header-container">
     <a routerLink="/" class="logo">
-        <img src="img/dypolar-1.png" alt="DyPolar Logo" class="logo-img" />
+        <img src="img/dypolar-1.png" alt="DyPolar Logo" (click)="irParaExplorar()" class="logo-img" />
     </a>
 
     <nav class="nav-links desktop-only">
       <a routerLink="/explorar" routerLinkActive="active">Explorar Grupos</a>
       <a routerLink="/acervo" routerLinkActive="active">Acervo</a>
-      <a routerLink="/premium" class="premium-link" routerLinkActive="active">Premium</a>
+      <a routerLink="/premium" class="premium-link" *ngIf="!isUserPremium" routerLinkActive="active">Seja Premium</a>
     </nav>
     <div class="header-actions">
-      <button class="btn-primary" (click)="irParaLogin()">Entrar</button>
+      <button class="btn-primary" *ngIf="!userLogged" (click)="irParaLogin()">Entrar</button>
+      <div class="user-menu">
+        <img class="user-icon" *ngIf="userLogged" (click)="mudarPopup()" src="img/user-icon.png">
+        <app-logout-popup *ngIf="openPopup"></app-logout-popup>
+      </div>
     </div>
   </div>
 </header>

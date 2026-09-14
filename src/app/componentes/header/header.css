@@ -7,6 +7,15 @@
   z-index: 100;
 }
 
+.user-icon {
+  max-width: 50px;
+  width: 100%;
+}
+
+.user-icon:hover {
+  cursor: pointer;
+}
+
 .header-container {
   max-width: 1200px;
   margin: 0 auto;

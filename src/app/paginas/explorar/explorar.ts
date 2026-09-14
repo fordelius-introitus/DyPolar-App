@@ -4,6 +4,8 @@ import { Footer } from "../../componentes/footer/footer";
 import { Group } from '../../models/group';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-explorar',
@@ -16,6 +18,10 @@ export class Explorar implements OnInit {
   
   termoBusca: string = '';
   modalidadeSelecionada: string = 'Todas';
+
+  loggedUser = false;
+  
+  constructor(private auth:AuthService, private router:Router) {}
 
   categorias = {
     vestibulares: false,
@@ -99,6 +105,7 @@ export class Explorar implements OnInit {
   gruposFiltrados: Group[] = [];
 
   ngOnInit() {
+    this.loggedUser = this.auth.isLogged();
     this.gruposFiltrados = [...this.grupos];
   }
 
