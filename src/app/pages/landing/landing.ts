@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Footer } from "../../componentes/footer/footer";
-import { HeaderComponent } from "../../componentes/header/header";
+import { Footer } from "../../components/footer/footer";
+import { HeaderComponent } from "../../components/header/header";
 
 @Component({
   selector: 'app-landing',

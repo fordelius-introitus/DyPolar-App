@@ -5,4 +5,7 @@ export interface User {
     password: string;
     isMember: boolean;
     groups: string[] | null;
+    
+    //Rating de compatibilidade
+    comp_rate: number;
 }

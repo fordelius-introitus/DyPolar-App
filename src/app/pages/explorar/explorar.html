@@ -59,11 +59,16 @@
                 
                 <div class="card-body">
                     <p>{{ grupo.descricao }}</p>
-                    <button class="entrar-grupo" *ngIf ="!grupo.userPertence">Entrar no Grupo</button>
+                    <button class="entrar-grupo" 
+                    *ngIf ="!grupo.userPertence"
+                    [routerLink]="['/grupo', grupo.id]"
+                    >
+                        Entrar no Grupo
+                    </button>
                     
                     <div class="pertence-group" *ngIf ="grupo.userPertence">
                         <p class="pertence-text"><i>Você está nesse grupo</i></p>
-                        <button class="ver-grupo">Ver Grupo</button>
+                        <button class="ver-grupo" [routerLink]="['/grupo', grupo.id]">Ver Grupo</button>
                     </div>
                 </div>
             </div>

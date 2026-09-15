@@ -5,10 +5,8 @@ export const PlaceholderUsers: User[] = [
         email: 'teste@email.com',
         password: '123456',
         isMember: false,
-        groups: [
-            "Preparação Militares",
-            "Preparação Robótica Competitiva"
-        ]
+        groups: [],
+        comp_rate: 0.6
     },
     {
         email: 'admin@email.com',
@@ -18,6 +16,7 @@ export const PlaceholderUsers: User[] = [
             "Estudo da filosofia clássica",
             "Preparação Robótica Competitiva",
             "Maratona de Programação"
-        ]
+        ],
+        comp_rate: 1
     }
 ]
