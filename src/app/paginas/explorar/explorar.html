@@ -59,7 +59,12 @@
                 
                 <div class="card-body">
                     <p>{{ grupo.descricao }}</p>
-                    <button class="apply-filters">Ver Grupo</button>
+                    <button class="entrar-grupo" *ngIf ="!grupo.userPertence">Entrar no Grupo</button>
+                    
+                    <div class="pertence-group" *ngIf ="grupo.userPertence">
+                        <p class="pertence-text"><i>Você está nesse grupo</i></p>
+                        <button class="ver-grupo">Ver Grupo</button>
+                    </div>
                 </div>
             </div>
         </div>

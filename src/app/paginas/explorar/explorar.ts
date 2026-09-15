@@ -29,7 +29,7 @@ export class Explorar implements OnInit {
     idiomas: false,
     programacao: false
   };
-  grupos: Group[] = [
+  site_grupos: Group[] = [
     { 
       id: '1',
       img: 'img/physics.png',
@@ -38,7 +38,8 @@ export class Explorar implements OnInit {
       compatibilidade: 98,
       membros: 43778,
       modalidade: 'Online',
-      tags: ['Ciências Exatas', 'Física', 'Militar', 'Vestibulares']
+      tags: ['Ciências Exatas', 'Física', 'Militar', 'Vestibulares'],
+      userPertence: false
     },
     {
       id: '2',
@@ -48,7 +49,8 @@ export class Explorar implements OnInit {
       compatibilidade: 67,
       membros: 1355,
       modalidade: 'Híbrido',
-      tags: ['Olimpíadas', 'Robótica']
+      tags: ['Olimpíadas', 'Robótica'],
+      userPertence: false
     },
     {
       id: '3',
@@ -58,7 +60,8 @@ export class Explorar implements OnInit {
       compatibilidade: 30,
       membros: 1256,
       modalidade: 'Presencial',
-      tags: ['Ciências Humanas', 'Filosofia', 'Faculdade']
+      tags: ['Ciências Humanas', 'Filosofia', 'Faculdade'],
+      userPertence: false
     },
     {
       id: '4',
@@ -68,7 +71,8 @@ export class Explorar implements OnInit {
       compatibilidade: 95,
       membros: 890,
       modalidade: 'Híbrido',
-      tags: ['Matemática', 'Engenharia', 'Graduação']
+      tags: ['Matemática', 'Engenharia', 'Graduação'],
+      userPertence: false
     },
     {
       id: '5',
@@ -78,7 +82,8 @@ export class Explorar implements OnInit {
       compatibilidade: 88,
       membros: 420,
       modalidade: 'Online',
-      tags: ['Tecnologia', 'Pesquisa Científica', 'IA']
+      tags: ['Tecnologia', 'Pesquisa Científica', 'IA'],
+      userPertence: false
     },
     {
       id: '6',
@@ -88,7 +93,8 @@ export class Explorar implements OnInit {
       compatibilidade: 92,
       membros: 2150,
       modalidade: 'Online',
-      tags: ['Computação', 'Programação', 'Algoritmos']
+      tags: ['Computação', 'Programação', 'Algoritmos'],
+      userPertence: false
     },
     {
       id: '7',
@@ -98,19 +104,33 @@ export class Explorar implements OnInit {
       compatibilidade: 55,
       membros: 560,
       modalidade: 'Online',
-      tags: ['Idiomas']
+      tags: ['Idiomas'],
+      userPertence: false
     }
   ];
 
   gruposFiltrados: Group[] = [];
 
-  ngOnInit() {
-    this.loggedUser = this.auth.isLogged();
-    this.gruposFiltrados = [...this.grupos];
+  pertenceAoGrupo(tituloGrupo: string): boolean {
+    const user = this.auth.getUser();
+    return user?.groups?.includes(tituloGrupo) ?? false;
   }
 
-  aplicarFiltros() {
-    this.gruposFiltrados = this.grupos.filter(grupo => {
+  checarGrupos(): void {
+    this.site_grupos.forEach(group => {
+      group.userPertence = this.pertenceAoGrupo(group.titulo);
+    });
+  }
+
+  ngOnInit(): void {
+    this.loggedUser = this.auth.isLogged();
+    this.gruposFiltrados = [...this.site_grupos];
+
+    this.checarGrupos();
+  }
+
+  aplicarFiltros(): void {
+    this.gruposFiltrados = this.site_grupos.filter(grupo => {
       
       const termo = this.termoBusca.toLowerCase();
       const bateComBusca = this.termoBusca === '' || 

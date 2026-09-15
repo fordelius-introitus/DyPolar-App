@@ -7,4 +7,5 @@ export interface Group {
   membros: number
   modalidade: 'Online' | 'Presencial' | 'Híbrido'
   tags: string[]
+  userPertence: boolean
 }

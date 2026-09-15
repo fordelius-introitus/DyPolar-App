@@ -49,7 +49,7 @@ button:hover {
   cursor: pointer;
 }
 
-.apply-filters {
+.apply-filters, .entrar-grupo, .ver-grupo {
   margin-top: 15px;
   padding: 10px;
   width: 100%;
@@ -59,6 +59,21 @@ button:hover {
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
+}
+
+.ver-grupo {
+  margin-top: 15px;
+  background-color: rgba(7, 175, 49, 0.507);
+  color: rgb(0, 117, 0);
+  border: 0.1rem solid green;
+}
+
+.ver-grupo:hover {
+  background-color: rgba(7, 175, 49, 0.658);
+}
+
+.pertence-text {
+  font-size: 10px;
 }
 
 .groups-container {
