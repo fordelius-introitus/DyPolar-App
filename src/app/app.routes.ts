@@ -5,6 +5,7 @@ import { Explorar } from './pages/explorar/explorar';
 import { GroupPage } from './pages/group-page/group-page';
 import { Books } from './pages/books/books';
 import { AuthGuard } from './guards/auth-guard';
+import { Cadastro } from './pages/cadastro/cadastro';
 
 export const routes: Routes = [
   { path: '', component: Landing },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'explorar', component: Explorar},
   { path: 'grupo/:id', component: GroupPage, canActivate: [AuthGuard]},
   { path: 'acervo', component: Books},
+  { path: 'cadastro', component: Cadastro},
   { path: '**', redirectTo: '' }
 ];

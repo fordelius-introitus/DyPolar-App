@@ -17,7 +17,12 @@
 }
 
 button {
+  background: linear-gradient(to left, #059db1, var(--dypolar-azul-primario));
   margin: 0 10px;
+}
+
+button:hover {
+  background: linear-gradient(to left, #047f8f, var(--dypolar-azul-primario));
 }
 
 .header-container {

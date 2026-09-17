@@ -107,6 +107,7 @@ h3 {
 
 .assine-premium {
     background-color: #c4b000;
+    background: linear-gradient(to bottom, #c7b510, #998a02);
 }
 
 .acessar-pdf, .aplicar-filtros {
