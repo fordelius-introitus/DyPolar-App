@@ -30,25 +30,51 @@
                 <label for="idioma"><input type="checkbox"> Inglês </label>
             </div>
         </div>
+        <button class="aplicar-filtros">Aplicar Filtros</button>
     </div>
+    
     <div class="books-container">
         <h2>Livros Recomendados</h2>
-        <div class="recommended-books">
-            <span class="book-card" *ngFor="let book of premiumBookCatalog">
-                <div class="disponibilidade">Premium</div>
-                <figure>
+        <div class="livros-grid">
+            <div class="book-card" *ngFor="let book of premiumBookCatalog">
+                <div class="disponibilidade"*ngIf="book.isPremium">Premium</div>
+                
+                <figure class="card-image-wrapper">
                     <img class="book-img" [src]="book.img">
                 </figure>
-                <span><b>{{ book.titulo }}</b></span>
-                <button class="acessar-pdf">Acessar PDF</button>
-            </span>
+                
+                <div class="card-info">
+                    <span class="titulo"><b>{{ book.titulo }}</b></span>
+                    <button class="assine-premium" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
+                    <button class="acessar-pdf" *ngIf="!book.isPremium || localUser?.isMember">Acessar PDF</button>
+                </div>
+            </div>
         </div>
+
         <h2>Outros livros do Acervo</h2>
-        <div class="other-books"></div>
+        <div class="livros-grid">
+            <div class="book-card" *ngFor="let book of bookCatalog">
+                <div class="disponibilidade" *ngIf="book.isPremium">Premium</div>
+                
+                <figure class="card-image-wrapper">
+                    <img class="book-img" [src]="book.img">
+                </figure>
+                
+                <div class="card-info">
+                    <span class="titulo"><b>{{ book.titulo }}</b></span>
+                    <button class="assine-premium" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
+                    <button class="acessar-pdf" *ngIf="!book.isPremium || localUser?.isMember">Acessar PDF</button>
+                </div>
+            </div>
+        </div>
         <div class="premium-sign" *ngIf="!localUser?.isMember">
             <span><b>Desbloqueie todo o acervo e ganhe o desconto em livros físicos.</b></span>
             <button class="premium-button">Assinar plano Premium</button>
         </div>
     </div>
 </div>
+<p id="licenca-uso">
+    Os materias apresentados nessa plataforma representam obras licenciadas, 
+    de domínio público ou utilizadas com a devida autorização para fins acadêmicos.
+</p>
 <app-footer></app-footer>

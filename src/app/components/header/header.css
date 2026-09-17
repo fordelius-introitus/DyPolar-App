@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+button {
+  margin: 0 10px;
+}
+
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
