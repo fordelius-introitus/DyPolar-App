@@ -4,13 +4,14 @@ import { Login } from './pages/login/login';
 import { Explorar } from './pages/explorar/explorar';
 import { GroupPage } from './pages/group-page/group-page';
 import { Books } from './pages/books/books';
+import { AuthGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', component: Landing },
   { path: 'home', component: Landing },
   { path: 'login', component: Login },
-  { path: 'explorar', component: Explorar },
-  { path: 'grupo/:id', component: GroupPage},
-  { path: 'acervo', component: Books },
+  { path: 'explorar', component: Explorar},
+  { path: 'grupo/:id', component: GroupPage, canActivate: [AuthGuard]},
+  { path: 'acervo', component: Books},
   { path: '**', redirectTo: '' }
 ];

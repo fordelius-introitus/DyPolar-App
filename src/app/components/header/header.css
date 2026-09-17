@@ -65,6 +65,15 @@ button {
   color: #d97706;
 }
 
+#licenca-uso {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #666;
+}
+
 @media (max-width: 768px) {
   .desktop-only {
     display: none;
