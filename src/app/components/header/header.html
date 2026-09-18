@@ -7,7 +7,7 @@
     <nav class="nav-links desktop-only">
       <a routerLink="/explorar" routerLinkActive="active">Explorar Grupos</a>
       <a routerLink="/acervo" routerLinkActive="active">Acervo</a>
-      <a routerLink="/premium" class="premium-link" *ngIf="!isUserPremium" routerLinkActive="active">Seja Premium</a>
+      <a routerLink="/membership" class="premium-link" *ngIf="!isUserPremium" routerLinkActive="active">Seja Premium</a>
     </nav>
     <div class="header-actions">
       <button class="btn-primary" *ngIf="!userLogged" [routerLink]="['/login']">Entrar</button>

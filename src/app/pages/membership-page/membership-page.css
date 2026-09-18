@@ -1,0 +1,74 @@
+.premium-benefits-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.book-benefits-container{
+    max-width: fit-content;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.benefits-head {
+    
+}
+
+td.button-row {
+    max-width: fit-content;
+    width: 100%;
+}
+
+.benefits-body {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 20px;
+
+    max-width: fit-content;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    background-color: #f2f4f7;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+figure {
+    max-width: 100px;
+    overflow: hidden;
+}
+
+.book-benefits-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+table th, td {
+    border: 1px solid black;
+
+    justify-content: center;
+    text-align: center;
+}
+
+table td {
+    padding: 10px 10px;
+    max-width: 20px;
+    min-width: 150px;
+    width: fit-content;
+}
+
+table {
+    display: block;
+    justify-content: center;
+    border-spacing: 0;
+
+    width: 50vh;
+    margin: 0 auto;
+}
