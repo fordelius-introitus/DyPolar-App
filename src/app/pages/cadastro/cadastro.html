@@ -1,30 +1,46 @@
 <div class="page-body">
     <div class="cadastro-body">
-        <img class="background-img" src="img/background-1.png">
         <div class="cadastro-container">
+            <a routerLink="/" class="back-link">← Voltar para o início</a>
+            <img class="logo" src="/img/dypolar-1.png" alt="DyPolar Logo">
+            <div class="welcome-text">
+                <h1>Seja bem-vindo</h1>
+                <span>Finalize seu cadastro para ter acesso à comunidades de estudos</span>
+            </div>
             <form class="cadastro-form">
                 <div class="input-group">
-                    <label for="nome"></label>
                     <input type="text" placeholder="Nome" required/>
                 </div>
                 <div class="input-group">
-                    <label for="nome"></label>
                     <input type="text" placeholder="Sobrenome" required/>
                 </div>
                 <div class="input-group">
-                    <label for="email"></label>
                     <input type="email" placeholder="E-mail" required/>
                 </div>
                 <div class="input-group">
-                    <label for="password"></label>
                     <input type="password" placeholder="Senha" required/>
                 </div>
                 <div class="input-group">
-                    <label for="password"></label>
                     <input type="password" placeholder="Confirmar Senha" required/>
                 </div>
+                
+                <span class="privacy-notice">
+                    Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. <br>
+                    A qualquer momento, será possível editar ou remover tais dados.
+                </span>
+                
+                <label class="terms-label" for="terms-conditions">
+                    <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+                    Sim. Li e concordo com os <a>Termos e Condições</a>
+                </label>
+                
                 <button class="confirmar">Confirmar Cadastro</button>
             </form>
         </div>
+    </div>
+    <img class="background-img" src="img/background-1.png">
+    <div class="branding-overlay-2">
+        <h1>Dy<span>Polar</span></h1>
+        <p>Encontre quem estuda como você.</p>
     </div>
 </div>

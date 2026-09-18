@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Explorar } from '../explorar/explorar';
 import { HeaderComponent } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { ActivatedRoute } from '@angular/router';
@@ -12,7 +11,7 @@ import { User } from '../../models/user';
 
 @Component({
   selector: 'app-group-page',
-  imports: [Explorar, HeaderComponent, Footer, CommonModule, FormsModule],
+  imports: [HeaderComponent, Footer, CommonModule, FormsModule],
   templateUrl: './group-page.html',
   styleUrl: './group-page.css',
 })

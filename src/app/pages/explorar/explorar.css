@@ -55,6 +55,12 @@
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
+
+  transition: background-color 0.3s ease;
+}
+
+.apply-filters:hover, .entrar-grupo:hover {
+  background-color: #08147c;
 }
 
 .ver-grupo {

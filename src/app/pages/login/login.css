@@ -15,7 +15,7 @@
 }
 
 .login-logo {
-  width: 200px; 
+  width: 200px;
   height: auto !important; 
   object-fit: contain; 
   display: block;
@@ -28,9 +28,19 @@
   }
 }
 
-.branding-overlay h2 {
+.branding-overlay h2, .branding-overlay span {
   font-size: 3rem;
-  color: var(--dypolar-branco);
+}
+
+.branding-overlay h2 {
+  color: white;
+}
+
+.branding-overlay span {
+  background-image: linear-gradient(to right, #0b1cb3, #00ffd5);
+
+  background-clip: text;
+  color: transparent;
 }
 
 .login-form-panel {
