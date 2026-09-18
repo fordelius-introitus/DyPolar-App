@@ -107,7 +107,10 @@ h3 {
 
 .assine-premium {
     background-color: #c4b000;
-    background: linear-gradient(to bottom, #c7b510, #998a02);
+}
+
+.assine-premium:hover {
+    background-color: #9b8c05;
 }
 
 .acessar-pdf, .aplicar-filtros {
@@ -120,6 +123,14 @@ h3 {
 
 .acessar-pdf:hover, .aplicar-filtros:hover {
     background-color: #081270;
+}
+
+.premium-button {
+    transition: background-color 0.2s;
+}
+
+.premium-button:hover {
+    background-color: #087008;
 }
 
 .aplicar-filtros {
@@ -165,6 +176,10 @@ h3 {
     display: flex;
     font-size: 12px;
     justify-content: center;
+}
+
+.autor {
+    font-size: 12px;
 }
 
 @media (max-width: 950px) {
