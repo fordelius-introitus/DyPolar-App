@@ -2,42 +2,43 @@
 <div class="page-body">
     <div class="filters">
         <h3>Filtros</h3>
-        <input type="text" placeholder="Título, autor ou tema">
+        <input type="text" placeholder="Título, autor ou tema" [(ngModel)]="filterSearch">
         <div class="checkboxes">
             <div class="categorias">
                 <h3>Categorias</h3>
-                <label class="nivel-checkbox"><input type="checkbox"> Didático</label>
-                <label class="nivel-checkbox"><input type="checkbox"> Técnico </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Artigo </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="categorias.didatico"> Didático</label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="categorias.tecnico"> Técnico </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="categorias.artigo"> Artigo </label>
             </div>
             <div class="area">
                 <h3>Área</h3>
-                <label class="nivel-checkbox"><input type="checkbox"> Exatas </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Humanas </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Tecnologia </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Linguagens </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="area.exatas"> Exatas </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="area.humanas"> Humanas </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="area.tecnologia"> Tecnologia </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="area.linguagens"> Linguagens </label>
             </div>
             <div class="nivel">
                 <h3>Nível</h3>
-                <label class="nivel-checkbox"><input type="checkbox"> Graduação </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Mestrado </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Vestibular </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Pós-Graduação </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="nivel.graduacao"> Graduação </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="nivel.mestrado"> Mestrado </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="nivel.vestibular"> Vestibular </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="nivel.posgraduacao"> Pós-Graduação </label>
             </div>
             <div class="idioma">
                 <h3>Idioma</h3>
-                <label class="nivel-checkbox"><input type="checkbox"> Português </label>
-                <label class="nivel-checkbox"><input type="checkbox"> Inglês </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="idioma.portugues"> Português </label>
+                <label class="nivel-checkbox"><input type="checkbox" [(ngModel)]="idioma.ingles"> Inglês </label>
             </div>
         </div>
-        <button class="aplicar-filtros">Aplicar Filtros</button>
+        <button class="aplicar-filtros" (click)='aplicarFiltros()'>Aplicar Filtros</button>
     </div>
     
     <div class="books-container">
         <h2>Livros Recomendados</h2>
         <div class="livros-grid">
-            <div class="book-card" *ngFor="let book of premiumBookCatalog">
-                <div class="disponibilidade"*ngIf="book.isPremium">Premium</div>
+            <p class="not-found" *ngIf="filteredPremiumBookCatalog.length === 0">Não achamos nenhum livro correspondente à pesquisa...</p>
+            <div class="book-card" *ngFor="let book of filteredPremiumBookCatalog">
+                <div class="disponibilidade" *ngIf="book.isPremium">Premium</div>
                 
                 <figure class="card-image-wrapper">
                     <img class="book-img" [src]="book.img">
@@ -46,7 +47,7 @@
                 <div class="card-info">
                     <span class="titulo"><b>{{ book.titulo }}</b></span>
                     <span class="autor"><i>Autor(a): {{ book.autor }}</i></span>
-                    <button class="assine-premium" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
+                    <button class="assine-premium" [routerLink]="['/membership']" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
                     <button class="acessar-pdf" *ngIf="!book.isPremium || localUser?.isMember">Acessar PDF</button>
                 </div>
             </div>
@@ -54,7 +55,8 @@
 
         <h2>Outros livros do Acervo</h2>
         <div class="livros-grid">
-            <div class="book-card" *ngFor="let book of bookCatalog">
+            <p class="not-found" *ngIf="filteredPremiumBookCatalog.length === 0">Não achamos nenhum livro correspondente à pesquisa...</p>
+            <div class="book-card" *ngFor="let book of filteredBookCatalog">
                 <div class="disponibilidade" *ngIf="book.isPremium">Premium</div>
                 
                 <figure class="card-image-wrapper">
@@ -69,9 +71,10 @@
                 </div>
             </div>
         </div>
+        
         <div class="premium-sign" *ngIf="!localUser?.isMember">
             <span><b>Desbloqueie todo o acervo e ganhe o desconto em livros físicos.</b></span>
-            <button class="premium-button">Assinar plano Premium</button>
+            <button class="premium-button" [routerLink]="['/membership']">Assinar plano Premium</button>
         </div>
         <p id="licenca-uso">
             Os materiais apresentados nesta plataforma representam obras licenciadas, 

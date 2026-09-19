@@ -176,6 +176,7 @@ h3 {
     display: flex;
     font-size: 12px;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .autor {

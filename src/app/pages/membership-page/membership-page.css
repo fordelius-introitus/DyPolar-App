@@ -1,74 +1,118 @@
-.premium-benefits-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+.page-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.book-benefits-container{
-    max-width: fit-content;
+.premium-benefits-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.premium-table-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
     width: 100%;
-    flex-shrink: 0;
+}
+
+.premium-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.premium-table th, 
+.premium-table td {
+    border: 1px solid #e2e8f0;
+    padding: 15px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.premium-table th {
+    background-color: #f8fafc;
+    font-weight: bold;
+}
+
+.premium-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.highlight {
+    background-color: #e0e7ff !important;
+    color: #0b1cb3;
+}
+
+.assine-premium-btn {
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    color: #ffffff;
+    background-color: #0b1cb3;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.assine-premium-btn:hover {
+    background-color: #081270;
+}
+
+.book-benefits-container {
+    max-width: 450px;
+    width: 100%;
     padding: 1.5rem;
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.benefits-head {
-    
+.benefits-head h2 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
 }
 
-td.button-row {
-    max-width: fit-content;
-    width: 100%;
+.benefits-head span {
+    font-size: 14px;
+    color: #64748b;
 }
 
 .benefits-body {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    gap: 20px;
-
-    max-width: fit-content;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
     width: 100%;
-    flex-shrink: 0;
-    padding: 1.5rem;
-    background-color: #f2f4f7;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    height: fit-content;
 }
 
-figure {
-    max-width: 100px;
+.mini-book-card {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
     overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
-.book-benefits-container img {
+.mini-book-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-table th, td {
-    border: 1px solid black;
-
-    justify-content: center;
-    text-align: center;
-}
-
-table td {
-    padding: 10px 10px;
-    max-width: 20px;
-    min-width: 150px;
-    width: fit-content;
-}
-
-table {
-    display: block;
-    justify-content: center;
-    border-spacing: 0;
-
-    width: 50vh;
-    margin: 0 auto;
+    object-position: center top;
 }

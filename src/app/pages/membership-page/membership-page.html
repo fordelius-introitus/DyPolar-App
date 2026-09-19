@@ -2,49 +2,55 @@
 
 <div class="page-body">
     <div class="premium-benefits-wrapper">
+        
+        <!-- Tabela -->
         <div class="premium-table-container">
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Plano Gratuito</th>
-                    <th>Plano Premium</th>
-                </tr>
-                <tr>
-                    <td>Acesso Ilimitado ao Acervo Digital</td>
-                    <td>❌</td>
-                    <td>✔️</td>
-                </tr>
-                <tr>
-                    <td>Filtros e Recomendações Avançadas</td>
-                    <td>❌</td>
-                    <td>✔️</td>
-                </tr>
-                <tr>
-                    <td>Descontos na Vitrine de Livros Físicos</td>
-                    <td>❌</td>
-                    <td>✔️</td>
-                </tr>
-                <tr>
-                    <td>Suporte Prioritário</td>
-                    <td>❌</td>
-                    <td>✔️</td>
-                </tr>
-                <tr class="button-row">
-                    <td><button>Assine o Premium</button></td>
-                </tr>
+            <table class="premium-table">
+                <thead>
+                    <tr>
+                        <th>Benefícios</th>
+                        <th>Plano Gratuito</th>
+                        <th class="highlight">Plano Premium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Acesso Ilimitado ao Acervo Digital</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Filtros e Recomendações Avançadas</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Descontos na Vitrine de Livros Físicos</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Suporte Prioritário</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                </tbody>
             </table>
+            <button class="assine-premium-btn">Quero ser Premium</button>
         </div>
         <div class="book-benefits-container">
             <div class="benefits-head">
                 <h2>Vitrine de Livros Físicos</h2>
-                <span>15% à 50% de Desconto em Livros Físicos na nossa Loja</span>
+                <span>Descontos de até 50% para assinantes Premium</span>
             </div>
+            
             <div class="benefits-body">
-                <figure class="book-figure" *ngFor="let book of bookList">
-                    <img [src]="[book.img]">
+                <figure class="mini-book-card" *ngFor="let book of bookList | slice:0:6">
+                    <img [src]="book.img" [alt]="book.titulo">
                 </figure>
             </div>
         </div>
+        
     </div>
 </div>
 

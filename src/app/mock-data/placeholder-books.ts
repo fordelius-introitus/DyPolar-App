@@ -126,7 +126,7 @@ export const mockPremiumBooks: Book[] = [
     idioma: 'Português',
     nivel: 'Avançado',
     preco: 140.00,
-    tags: ['Matemática', 'Geometria', 'Militar'],
+    tags: ['Matemática', 'Geometria', 'Vestibular'],
     isPremium: false,
     discount: null
   }
