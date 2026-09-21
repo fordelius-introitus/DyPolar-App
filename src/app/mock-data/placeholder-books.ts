@@ -13,7 +13,8 @@ export const mockBooks: Book[] = [
     preco: 185.00,
     tags: ['Física', 'Mecânica', 'Vestibular'],
     isPremium: false,
-    discount: 15
+    discount: 15,
+    compravel: true
   },
   {
     id: 'b4',
@@ -27,7 +28,8 @@ export const mockBooks: Book[] = [
     preco: 75.00,
     tags: ['Tecnologia', 'Ética', 'Sociedade'],
     isPremium: false,
-    discount: null
+    discount: null,
+    compravel: false
   },
   {
     id: 'b5',
@@ -41,7 +43,8 @@ export const mockBooks: Book[] = [
     preco: 45.00,
     tags: ['Filosofia', 'Sociologia', 'Humanas'],
     isPremium: true,
-    discount: null
+    discount: null,
+    compravel: true
   },
   {
     id: 'b7',
@@ -55,7 +58,8 @@ export const mockBooks: Book[] = [
     preco: 0.00,
     tags: ['Tecnologia', 'Ética', 'Inteligência Artificial'],
     isPremium: false,
-    discount: null
+    discount: null,
+    compravel: false
   },
   {
     id: 'b8',
@@ -69,7 +73,8 @@ export const mockBooks: Book[] = [
     preco: 0.00,
     tags: ['Física', 'Termodinâmica', 'Calorimetria', 'Militar'],
     isPremium: false,
-    discount: null
+    discount: null,
+    compravel: false
   },
   {
     id: 'b9',
@@ -83,7 +88,8 @@ export const mockBooks: Book[] = [
     preco: 0.00,
     tags: ['Matemática', 'Álgebra Linear', 'Engenharia'],
     isPremium: false,
-    discount: null
+    discount: null,
+    compravel: true
   },
 ];
 
@@ -100,7 +106,8 @@ export const mockPremiumBooks: Book[] = [
     preco: 195.00,
     tags: ['Cálculo', 'Matemática', 'Engenharia'],
     isPremium: true,
-    discount: 10
+    discount: 10,
+    compravel: true
   },
   {
     id: 'b6',
@@ -114,7 +121,8 @@ export const mockPremiumBooks: Book[] = [
     preco: 110.00,
     tags: ['Computação', 'Programação', 'Engenharia'],
     isPremium: true,
-    discount: 20
+    discount: 20,
+    compravel: true
   },
   {
     id: 'b1',
@@ -128,6 +136,7 @@ export const mockPremiumBooks: Book[] = [
     preco: 140.00,
     tags: ['Matemática', 'Geometria', 'Vestibular'],
     isPremium: false,
-    discount: null
+    discount: null,
+    compravel: false
   }
 ]

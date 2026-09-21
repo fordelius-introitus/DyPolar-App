@@ -1,0 +1,14 @@
+img {
+    max-width: 500px;
+    width: 100%;
+}
+
+.page-body {
+    background-color: #b6c4d5;
+}
+
+.product-card-body {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}

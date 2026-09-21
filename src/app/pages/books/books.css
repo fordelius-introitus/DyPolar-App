@@ -1,8 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .page-body {
     display: flex;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .filters {
@@ -84,9 +92,13 @@ h3 {
 .card-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-grow: 1;
     padding: 1.5rem;
+    gap: 10px;
+}
+
+.card-info button:first-of-type {
+    margin-top: auto;
 }
 
 .titulo {
@@ -94,7 +106,7 @@ h3 {
     color: #333;
 }
 
-.acessar-pdf, .assine-premium, .aplicar-filtros {
+.acessar-pdf, .assine-premium, .aplicar-filtros, .comprar-fisico {
     width: 100%;
     padding: 10px;
     color: #ffffff;
@@ -113,15 +125,15 @@ h3 {
     background-color: #9b8c05;
 }
 
-.acessar-pdf, .aplicar-filtros {
+.acessar-pdf, .aplicar-filtros, .comprar-fisico {
     background-color: #0b1cb3;
 }
 
-.acessar-pdf, .assine-premium {
+.acessar-pdf, .assine-premium, .comprar-fisico {
     padding: 5px 10px;
 }
 
-.acessar-pdf:hover, .aplicar-filtros:hover {
+.acessar-pdf:hover, .aplicar-filtros:hover, .comprar-fisico:hover {
     background-color: #081270;
 }
 

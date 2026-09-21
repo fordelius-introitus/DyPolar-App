@@ -11,4 +11,5 @@ export interface Book {
   tags: string[];
   isPremium: boolean;
   discount: number | null;
+  compravel: boolean;
 }

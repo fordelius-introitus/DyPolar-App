@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Footer } from "../../components/footer/footer";
 import { HeaderComponent } from "../../components/header/header";
@@ -7,7 +7,7 @@ import { HeaderComponent } from "../../components/header/header";
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, Footer, HeaderComponent],
+  imports: [CommonModule, Footer, HeaderComponent, RouterLink],
   templateUrl: './landing.html',
   styleUrls: ['./landing.css']
 })

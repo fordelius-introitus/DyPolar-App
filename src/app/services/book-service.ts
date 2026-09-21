@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Book } from '../models/book';
 import { mockBooks, mockPremiumBooks } from '../mock-data/placeholder-books';
 
@@ -15,5 +15,16 @@ export class BookService {
 
   getPremiumBookList(): Book[] {
     return mockPremiumBooks;
+  }
+
+  getBookByID(id: string): Book | undefined {
+    const livroEncontrado = this.websiteBooks.find(book => book.id === id) ||
+                            this.websitePremiumBooks.find(book => book.id === id);
+
+    if(livroEncontrado) {
+      return livroEncontrado;
+    } else {
+      return undefined;
+    }
   }
 }

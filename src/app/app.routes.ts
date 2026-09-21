@@ -7,6 +7,7 @@ import { Books } from './pages/books/books';
 import { AuthGuard } from './guards/auth-guard';
 import { Cadastro } from './pages/cadastro/cadastro';
 import { MembershipPage } from './pages/membership-page/membership-page';
+import { ComprarLivro } from './pages/comprar-livro/comprar-livro';
 
 export const routes: Routes = [
   { path: '', component: Landing },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'acervo', component: Books},
   { path: 'cadastro', component: Cadastro},
   { path: 'membership', component: MembershipPage},
+  { path: 'comprar-livro/:id', component: ComprarLivro},
   { path: '**', redirectTo: '' }
 ];
