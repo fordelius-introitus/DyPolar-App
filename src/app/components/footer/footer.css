@@ -2,7 +2,11 @@
   background-color: var(--dypolar-branco);
   border-top: 1px solid var(--dypolar-borda);
   padding: 2rem 0;
-  margin-top: auto; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .footer-container {
@@ -42,8 +46,12 @@
   text-decoration: underline;
 }
 
-/* Responsividade Mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .dypolar-footer {
+    position: static;
+    margin-top: auto; 
+  }
+
   .footer-container {
     flex-direction: column;
     gap: 1.5rem;

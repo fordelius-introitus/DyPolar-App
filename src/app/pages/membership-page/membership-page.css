@@ -58,7 +58,7 @@
     padding: 15px;
     width: 100%;
     color: #ffffff;
-    background-color: #0b1cb3;
+    background: linear-gradient(to top, blue, rgb(0, 162, 190));
     border: 0;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -68,7 +68,7 @@
 }
 
 .assine-premium-btn:hover {
-    background-color: #081270;
+    background: linear-gradient(to top, rgb(0, 0, 197), rgb(0, 140, 165));
 }
 
 .book-benefits-container {

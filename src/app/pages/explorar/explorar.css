@@ -6,6 +6,8 @@
   margin: 0 auto;
   min-height: calc(100vh - 140px);
   box-sizing: border-box;
+
+  padding-bottom: 150px;
 }
 
 .filters-container {

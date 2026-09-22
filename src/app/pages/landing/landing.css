@@ -9,6 +9,47 @@
   margin-bottom: 3rem;
 }
 
+.hero-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-img {
+  display: flex;
+  max-width: 500px;
+
+  background-color: blue;
+  border-radius: 15px;
+}
+
+.balls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.ball {
+    width: 12px;
+    height: 12px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ball:hover {
+    background-color: #9ca3af;
+}
+
+.bolinha-ativa {
+    background-color: #0b1cb3;
+    transform: scale(1.3);
+}
+
 h2 {
   font-size: 2rem;
   color: var(--dypolar-azul-escuro);

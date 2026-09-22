@@ -8,11 +8,15 @@
         <button class="btn-primary btn-large" (click)="irParaExplorar()">Explorar grupos</button>
       </div>
       <div class="hero-image-placeholder">
-        <div class="mock-image">[Ilustração de Comunidade Acadêmica]</div>
+        <img class="carousel-img" [src]="[image_srcs[curr_index]]">
+        <div class="balls">
+          <div class="ball" *ngFor="let img of image_srcs; let i = index"
+          (click)="setImage(i)"
+          [class.bolinha-ativa]="i === curr_index"></div>
+        </div>
       </div>
     </div>
   </section>
-
   <section class="como-funciona-section">
     <div class="container">
       <div class="text-center">

@@ -49,7 +49,11 @@
                     <span class="autor"><i>Autor(a): {{ book.autor }}</i></span>
                     <button class="assine-premium" [routerLink]="['/membership']" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
                     <button class="acessar-pdf" *ngIf="!book.isPremium || localUser?.isMember">Acessar PDF</button>
-                    <button class="comprar-fisico" [routerLink]="['/comprar-livro', book.id]" *ngIf="book.compravel  || localUser?.isMember">Comprar Físico</button>
+                    <button class="comprar-fisico" 
+                            [routerLink]="(book.compravel || localUser?.isMember) ? ['/comprar-livro', book.id] : null"
+                            [disabled]="!(book.compravel || localUser?.isMember)">
+                        Comprar Físico
+                    </button>
                 </div>
             </div>
         </div>
@@ -68,7 +72,11 @@
                     <span class="titulo"><b>{{ book.titulo }}</b></span>
                     <button class="assine-premium" *ngIf="book.isPremium && !(localUser?.isMember)">Assine o Premium</button>
                     <button class="acessar-pdf" *ngIf="!book.isPremium || localUser?.isMember">Acessar PDF</button>
-                    <button class="comprar-fisico" [routerLink]="['/comprar-livro', book.id]" *ngIf="book.compravel  || localUser?.isMember">Comprar Físico</button>
+                    <button class="comprar-fisico" 
+                            [routerLink]="(book.compravel || localUser?.isMember) ? ['/comprar-livro', book.id] : null"
+                            [disabled]="!(book.compravel || localUser?.isMember)">
+                        Comprar Físico
+                    </button>
                 </div>
             </div>
         </div>

@@ -11,6 +11,8 @@
     margin: 0 auto;
     flex-grow: 1;
     width: 100%;
+
+    padding-bottom: 125px;
 }
 
 .filters {
@@ -118,11 +120,12 @@ h3 {
 }
 
 .assine-premium {
-    background-color: #c4b000;
+    background-color: rgb(254, 221, 0);
+    color: rgb(61, 57, 0);
 }
 
 .assine-premium:hover {
-    background-color: #9b8c05;
+    background-color: #c5b201;
 }
 
 .acessar-pdf, .aplicar-filtros, .comprar-fisico {
@@ -135,6 +138,13 @@ h3 {
 
 .acessar-pdf:hover, .aplicar-filtros:hover, .comprar-fisico:hover {
     background-color: #081270;
+}
+
+.comprar-fisico:disabled {
+    cursor: auto;
+    border: 1px solid #121f8f91;
+    background-color: #0b1cb32d;
+    color: #121f8f91;
 }
 
 .premium-button {
