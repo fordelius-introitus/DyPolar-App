@@ -22,11 +22,21 @@
             </select>
             <div class="feed-body">
                 <p class="no-posts" *ngIf="!groupHasPosts">Não há nenhuma postagem...</p>
-                <span></span>
+                <div class="post" *ngFor="let post of pageGroup?.posts">
+                    <span class="post-head">{{ post.autor }} ● {{post.data}}</span>
+                    <div class="post-body">
+                        {{ post.conteudo }}
+                    </div>
+                    <span>♥  {{ post.curtidas || 0 }}</span>
+                </div>
             </div>
         </div>
         <div class="sources-container">
             <h3>Materiais do Grupo</h3>
+            <div class="source" *ngFor="let src of pageGroup?.materiais">
+                <img [src]="[]">
+                <span>{{ src.titulo }}</span>
+            </div>
         </div>
         <div class="desc-members-container">
             <h3>Descrição</h3>

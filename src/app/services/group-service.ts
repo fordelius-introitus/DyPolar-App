@@ -16,7 +16,15 @@ export class GroupService {
         membros: 68,
         modalidade: 'Online',
         tags: ['Ciências Exatas', 'Física', 'Militar', 'Vestibulares'],
-        userPertence: false
+        userPertence: false,
+        posts: [
+          { autor: 'Marcos Braga', data: 'Ontem', conteudo: 'Alguém conseguiu resolver a questão 5 da última lista de dinâmica? Travei na decomposição das forças.' },
+          { autor: 'Ana Lopes', data: 'Há 3 dias', conteudo: 'Subi o gabarito comentado da prova de 2023 na aba de materiais. Deem uma olhada!' }
+        ],
+        materiais: [
+          { titulo: 'Lista Dinâmica Aprofundamento', tipo: 'PDF', autor: 'Marcos Braga' },
+          { titulo: 'Resumo Cinemática Vetorial', tipo: 'PDF', autor: 'Ana Lopes' }
+        ]
       },
       {
         id: '2',
@@ -27,7 +35,9 @@ export class GroupService {
         membros: 83,
         modalidade: 'Híbrido',
         tags: ['Olimpíadas', 'Robótica'],
-        userPertence: false
+        userPertence: false,
+        posts: [],
+        materiais: []
       },
       {
         id: '3',
@@ -38,7 +48,9 @@ export class GroupService {
         membros: 45,
         modalidade: 'Presencial',
         tags: ['Ciências Humanas', 'Filosofia', 'Faculdade'],
-        userPertence: false
+        userPertence: false,
+        posts: [],
+        materiais: []
       },
       {
         id: '4',
@@ -49,7 +61,9 @@ export class GroupService {
         membros: 34,
         modalidade: 'Híbrido',
         tags: ['Matemática', 'Engenharia', 'Graduação'],
-        userPertence: false
+        userPertence: false,
+        posts: [],
+        materiais: []
       },
       {
         id: '5',
@@ -60,7 +74,9 @@ export class GroupService {
         membros: 18,
         modalidade: 'Online',
         tags: ['Tecnologia', 'Pesquisa Científica', 'IA'],
-        userPertence: false
+        userPertence: false,
+        posts: [],
+        materiais: []
       },
       {
         id: '6',
@@ -71,7 +87,13 @@ export class GroupService {
         membros: 156,
         modalidade: 'Online',
         tags: ['Computação', 'Programação', 'Algoritmos'],
-        userPertence: false
+        userPertence: false,
+        posts: [
+          { autor: 'Carlos Eduardo', data: 'Hoje', conteudo: 'Galera, lembrando que hoje à noite tem treino de Two Pointers e Sliding Window no Codeforces.' }
+        ],
+        materiais: [
+          { titulo: 'Guia de Alocação Dinâmica em C', tipo: 'PDF', autor: 'Monitoria' }
+        ]
       },
       {
         id: '7',
@@ -82,7 +104,9 @@ export class GroupService {
         membros: 172,
         modalidade: 'Online',
         tags: ['Idiomas'],
-        userPertence: false
+        userPertence: false,
+        posts: [],
+        materiais: []
       }
     ];
 

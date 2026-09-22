@@ -1,13 +1,60 @@
 <app-header></app-header>
 
 <div class="page-body">
+    <a class="back-link" [routerLink]="['/acervo']">← Voltar para o acervo</a>
+
     <div class="product-card-body">
         <div class="img-wrapper">
-            <a [routerLink]="['/acervo']">← Voltar para o início</a>
-            <div class="img-wrapper"><img [src]="[pageBook?.img]"></div>
+            <figure class="gallery">
+                <img [src]="pageBook?.img" [alt]="pageBook?.titulo">
+            </figure>
         </div>
         <div class="product-info">
+            <span class="product-condition">Novo | +50 vendidos</span>
             
+            <h1 class="product-title">{{ pageBook?.titulo }}</h1>
+            <span class="product-author">por <b>{{ pageBook?.autor }}</b></span>
+
+            <div class="price-section">
+                <span class="old-price" *ngIf="pageBook?.discount">
+                    R$ {{ pageBook?.preco | number:'1.2-2' }}
+                </span>
+                
+                <div class="current-price-row">
+                    <span class="price">
+                        R$ {{ getPrecoComDesconto() | number:'1.2-2' }}
+                    </span>
+                    <span class="discount-badge" *ngIf="pageBook?.discount">
+                        {{ pageBook?.discount }}% OFF
+                    </span>
+                </div>
+                <span class="premium-benefit" *ngIf="!pageBook?.discount">
+                    Assinantes Premium ganham até 20% OFF.
+                </span>
+            </div>
+
+            <div class="shipping-info">
+                <span class="shipping-icon">🚚</span>
+                <div class="shipping-text">
+                    <span class="green-text">Frete grátis</span>
+                    <span class="delivery-time">Saiba os prazos de entrega e as formas de envio.</span>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <h3>O que você precisa saber sobre este livro:</h3>
+                <p>{{ pageBook?.descricao }}</p>
+                <ul class="features-list">
+                    <li>Categoria: {{ pageBook?.categoria }}</li>
+                    <li>Nível: {{ pageBook?.nivel }}</li>
+                    <li>Idioma: {{ pageBook?.idioma }}</li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-primary">Comprar agora</button>
+                <button class="btn-secondary">Adicionar ao carrinho</button>
+            </div>
         </div>
     </div>
 </div>

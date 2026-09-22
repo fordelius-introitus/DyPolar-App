@@ -75,6 +75,24 @@ button:hover {
     flex: 1;
 }
 
+.post {
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.post-body {
+    padding-top: 20px;
+}
+
+.source {
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
 .desc-members-container {
     flex: 1;
     max-width: 300px;
