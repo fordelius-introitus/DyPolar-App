@@ -4,18 +4,27 @@
         <img src="img/dypolar-1.png" alt="DyPolar Logo" (click)="irParaExplorar()" class="logo-img" />
     </a>
 
-    <nav class="nav-links desktop-only">
-      <a routerLink="/explorar" routerLinkActive="active">Explorar Grupos</a>
-      <a routerLink="/acervo" routerLinkActive="active">Acervo</a>
-      <a routerLink="/membership" class="premium-link" *ngIf="!isUserPremium" routerLinkActive="active">Seja Premium</a>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-primary" *ngIf="!userLogged" [routerLink]="['/login']">Entrar</button>
-      <button class="btn-primary" *ngIf="!userLogged" [routerLink]="['/cadastro']">Cadastre-se</button>
-      <div class="user-menu">
-        <img class="user-icon" *ngIf="userLogged" (click)="mudarPopup()" src="img/user-icon.png">
-        <app-logout-popup *ngIf="openPopup"></app-logout-popup>
+    <!-- Botão Hambúrguer visível apenas no mobile -->
+    <button class="hamburger-btn" (click)="menuOpen = !menuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- O menu recebe a classe 'mobile-open' quando clicado -->
+    <nav class="nav-links" [class.mobile-open]="menuOpen">
+      <a routerLink="/explorar" routerLinkActive="active" (click)="menuOpen = false">Explorar Grupos</a>
+      <a routerLink="/acervo" routerLinkActive="active" (click)="menuOpen = false">Acervo</a>
+      <a routerLink="/membership" class="premium-link" *ngIf="!isUserPremium" routerLinkActive="active" (click)="menuOpen = false">Seja Premium</a>
+      
+      <div class="header-actions">
+        <button class="btn-primary" *ngIf="!userLogged" [routerLink]="['/login']" (click)="menuOpen = false">Entrar</button>
+        <button class="btn-primary" *ngIf="!userLogged" [routerLink]="['/cadastro']" (click)="menuOpen = false">Cadastre-se</button>
+        <div class="user-menu" *ngIf="userLogged">
+          <img class="user-icon" (click)="mudarPopup()" src="img/user-icon.png">
+          <app-logout-popup *ngIf="openPopup"></app-logout-popup>
+        </div>
       </div>
-    </div>
+    </nav>
   </div>
 </header>

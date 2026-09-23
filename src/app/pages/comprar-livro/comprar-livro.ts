@@ -5,6 +5,8 @@ import { HeaderComponent } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { BookService } from '../../services/book-service';
 import { Book } from '../../models/book';
+import { User } from '../../models/user';
+import { AuthService } from '../../services/auth';
 
 @Component({
   selector: 'app-comprar-livro',
@@ -15,16 +17,19 @@ import { Book } from '../../models/book';
 })
 export class ComprarLivro implements OnInit {
   
+  localUser: User | null = null;
   pageBook: Book | undefined = undefined;
   bookId: string | null = null;
 
   constructor(
     private bookService: BookService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
     this.bookId = this.route.snapshot.paramMap.get('id');
+    this.localUser = this.auth.getUser();
 
     if(this.bookId) {
       this.pageBook = this.bookService.getBookByID(this.bookId);

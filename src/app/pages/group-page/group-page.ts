@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { GroupService } from '../../services/group-service';
 import { Group } from '../../models/group';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 
 @Component({
   selector: 'app-group-page',
-  imports: [HeaderComponent, Footer, CommonModule, FormsModule],
+  imports: [HeaderComponent, Footer, CommonModule, FormsModule, RouterLink],
   templateUrl: './group-page.html',
   styleUrl: './group-page.css',
 })

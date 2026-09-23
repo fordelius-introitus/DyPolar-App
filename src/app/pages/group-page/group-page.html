@@ -1,6 +1,7 @@
 <app-header></app-header>
 
 <div class="page-body">
+    <a [routerLink]="['/explorar']" class="back-link">← Voltar aos grupos</a>
     <div class="group-title-container">
         <div class="title-tags">
             <h1>{{ pageGroup?.titulo }}</h1>
@@ -19,6 +20,8 @@
             <input type="text" placeholder="Pesquisar...">
             <select>
                 <option>Filtrar opções</option>
+                <option>Mais novos</option>
+                <option>Mais gostados</option>
             </select>
             <div class="feed-body">
                 <p class="no-posts" *ngIf="!groupHasPosts">Não há nenhuma postagem...</p>
@@ -27,15 +30,18 @@
                     <div class="post-body">
                         {{ post.conteudo }}
                     </div>
-                    <span>♥  {{ post.curtidas || 0 }}</span>
+                    <div class="icons">
+                        <span><img src="img/heart-icon.png" id="heart-icon">  {{ post.curtidas || 0 }}</span>
+                        <span><img src="img/comment.png" id="heart-icon">  {{ post.curtidas || 0 }}</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="sources-container">
             <h3>Materiais do Grupo</h3>
             <div class="source" *ngFor="let src of pageGroup?.materiais">
-                <img [src]="[]">
-                <span>{{ src.titulo }}</span>
+                <img [src]="src.tipo == 'PDF' ? ['img/pdf.png'] : null">
+                <a href="#">{{ src.titulo }}</a>
             </div>
         </div>
         <div class="desc-members-container">

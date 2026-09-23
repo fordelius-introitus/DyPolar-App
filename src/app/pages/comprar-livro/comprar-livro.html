@@ -28,8 +28,8 @@
                         {{ pageBook?.discount }}% OFF
                     </span>
                 </div>
-                <span class="premium-benefit" *ngIf="!pageBook?.discount">
-                    Assinantes Premium ganham até 20% OFF.
+                <span class="premium-benefit" *ngIf="!pageBook?.discount && !localUser?.isMember">
+                    Assinantes Premium ganham até 50% OFF.
                 </span>
             </div>
 

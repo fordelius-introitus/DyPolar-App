@@ -18,16 +18,17 @@
 }
 
 .back-link {
-  display: inline-block;
-  color: var(--dypolar-cinza-texto);
-  text-decoration: none;
-  margin-bottom: 2rem;
-  width: 100%;
-  font-size: 0.9rem;
+    display: inline-block;
+    color: var(--dypolar-cinza-texto);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    width: 100%;
+    font-size: 0.9rem;
 }
 
 .back-link:hover {
-  color: var(--dypolar-azul-primario);
+    cursor: pointer;
+    color: var(--dypolar-azul-primario);
 }
 
 .background-img {

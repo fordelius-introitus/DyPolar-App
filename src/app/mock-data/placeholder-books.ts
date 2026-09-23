@@ -55,7 +55,7 @@ export const mockBooks: Book[] = [
     categoria: 'Artigo Científico',
     idioma: 'Português',
     nivel: 'Pesquisa / Graduação',
-    preco: 0.00,
+    preco: 74.00,
     tags: ['Tecnologia', 'Ética', 'Inteligência Artificial'],
     isPremium: false,
     discount: null,
@@ -70,10 +70,10 @@ export const mockBooks: Book[] = [
     categoria: 'Apostila',
     idioma: 'Português',
     nivel: 'Avançado',
-    preco: 0.00,
+    preco: 80.00,
     tags: ['Física', 'Termodinâmica', 'Calorimetria', 'Militar'],
     isPremium: false,
-    discount: null,
+    discount: 45,
     compravel: false
   },
   {
@@ -85,7 +85,7 @@ export const mockBooks: Book[] = [
     categoria: 'Livro Didático',
     idioma: 'Português',
     nivel: 'Ensino Superior',
-    preco: 0.00,
+    preco: 97.80,
     tags: ['Matemática', 'Álgebra Linear', 'Engenharia'],
     isPremium: false,
     discount: null,
@@ -96,7 +96,7 @@ export const mockBooks: Book[] = [
 export const mockPremiumBooks: Book[] = [
   {
     id: 'b3',
-    img: 'book-images/guidorizzi.jpg',
+    img: 'book-images/guidorizzi.png',
     titulo: 'Um Curso de Cálculo - Vol. 1',
     descricao: 'O livro de cálculo mais tradicional nas engenharias e cursos de exatas do Brasil. Focado em limites, derivadas e introdução a integrais.',
     autor: 'Hamilton Luiz Guidorizzi',
@@ -106,7 +106,7 @@ export const mockPremiumBooks: Book[] = [
     preco: 195.00,
     tags: ['Cálculo', 'Matemática', 'Engenharia'],
     isPremium: true,
-    discount: 10,
+    discount: 45,
     compravel: true
   },
   {
@@ -136,7 +136,7 @@ export const mockPremiumBooks: Book[] = [
     preco: 140.00,
     tags: ['Matemática', 'Geometria', 'Vestibular'],
     isPremium: false,
-    discount: null,
+    discount: 45,
     compravel: false
   }
 ]

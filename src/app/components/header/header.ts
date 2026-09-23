@@ -1,51 +1,51 @@
-import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
-import { AuthService } from '../../services/auth';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth';
 import { LogoutPopup } from '../logout-popup/logout-popup';
-import { User } from '../../models/user';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, CommonModule, LogoutPopup, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, LogoutPopup],
   templateUrl: './header.html',
-  styleUrls: ['./header.css']
+  styleUrl: './header.css'
 })
-export class HeaderComponent {
-
-  userLogged = false;
-  isUserPremium = false;
-  openPopup = false;
-
-  isPremium(): void {
-    let user = this.auth.getUser();
-
-    if(user?.isMember) {
-      this.isUserPremium = true;
-    }
-    else this.isUserPremium = false;
-  }
+export class HeaderComponent implements OnInit {
   
-  constructor(private router: Router, private auth:AuthService) {
-    this.userLogged = this.auth.isLogged();
-    this.isPremium();
-  }
+  menuOpen: boolean = false;
+  userLogged: boolean = false;
+  isUserPremium: boolean = false;
+  openPopup: boolean = false;
 
-  irParaExplorar(): void {
-    if(this.userLogged) {
-      this.router.navigate(['/explorar']);
-    } else {
-      this.router.navigate(['/home']);
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+
+    this.userLogged = this.auth.isLogged();
+    if (this.userLogged) {
+      const user = this.auth.getUser();
+      this.isUserPremium = user?.isMember ?? false; 
     }
   }
 
   mudarPopup(): void {
-    console.log("mudou popup")
     this.openPopup = !this.openPopup;
   }
 
-  irParaLogin(): void {
-    this.router.navigate(['/login']);
+  // Ação de clique na logo
+  irParaExplorar(): void {
+    this.router.navigate(['/explorar']);
+    this.menuOpen = false;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth > 768 && this.menuOpen) {
+      this.menuOpen = false;
+    }
   }
 }
