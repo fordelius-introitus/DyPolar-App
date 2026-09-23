@@ -13,7 +13,7 @@ export const mockBooks: Book[] = [
     preco: 185.00,
     tags: ['Física', 'Mecânica', 'Vestibular'],
     isPremium: false,
-    discount: 15,
+    discount: 20,
     compravel: true
   },
   {

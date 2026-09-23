@@ -121,7 +121,13 @@
 
 .discount-badge {
     font-size: 18px;
-    color: #00a650; 
+    color: rgb(255, 174, 0); 
+    font-weight: 400;
+}
+
+.premium-discount-sign {
+    font-size: 15px;
+    color: rgb(255, 174, 0); 
     font-weight: 400;
 }
 

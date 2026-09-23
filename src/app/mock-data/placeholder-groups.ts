@@ -47,7 +47,11 @@ export const PlaceholderGroups: Group[] = [
     modalidade: 'Presencial',
     tags: ['Ciências Humanas', 'Filosofia', 'Faculdade'],
     userPertence: false,
-    posts: [],
+    posts: [
+        {autor: 'Ana Lúcia', data: 'Há 3 dias', conteudo: 'tenho compromisso no dia, poderemos remarcar?'},
+        {autor: 'Rane Oliveira', data: 'Há 4 dias', conteudo: 'A sala foi confirmada: Será a Sala 302 do PAF 3.'},
+        {autor: 'Rane Oliveira', data: 'Há 4 dias', conteudo: 'Boa tarde! O próximo encontro vai ser dia 25/09 às 14:50, logo será dita a sala.'}
+    ],
     materiais: []
     },
     {

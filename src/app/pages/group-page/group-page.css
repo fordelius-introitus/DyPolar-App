@@ -91,6 +91,21 @@ button:hover {
     border-radius: 8px;
 }
 
+.sources-container, .desc-members-container {
+    max-height: 500px;
+    min-height: 250px;
+    height: 100%;
+}
+
+.post-head {
+    color: rgb(75, 74, 74);
+    font-size: 13px;
+}
+
+.source {
+    margin-top: 5px;
+}
+
 .post-feed-container {
     flex: 2; 
 }

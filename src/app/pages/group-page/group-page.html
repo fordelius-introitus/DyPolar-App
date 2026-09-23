@@ -26,7 +26,7 @@
             <div class="feed-body">
                 <p class="no-posts" *ngIf="!groupHasPosts">Não há nenhuma postagem...</p>
                 <div class="post" *ngFor="let post of pageGroup?.posts">
-                    <span class="post-head">{{ post.autor }} ● {{post.data}}</span>
+                    <span class="post-head">{{ post.autor }} - {{post.data}}</span>
                     <div class="post-body">
                         {{ post.conteudo }}
                     </div>

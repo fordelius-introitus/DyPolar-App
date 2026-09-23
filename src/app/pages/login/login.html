@@ -25,6 +25,7 @@
         <div class="input-group">
           <label for="password">Senha</label>
           <input type="password" name="password" id="password" [(ngModel)]="password" placeholder="••••••••" required />
+          <p *ngIf="email != '' && password != '' && invalidLogin" class="failed-login">*E-mail ou senha inválidos</p>
         </div>
 
         <div class="form-actions">

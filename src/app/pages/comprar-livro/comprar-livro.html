@@ -16,19 +16,20 @@
             <span class="product-author">por <b>{{ pageBook?.autor }}</b></span>
 
             <div class="price-section">
-                <span class="old-price" *ngIf="pageBook?.discount">
+                <p class="premium-discount-sign" *ngIf="localUser?.isMember && pageBook?.discount">Desconto Premium!</p>
+                <span class="old-price" *ngIf="pageBook?.discount && localUser?.isMember">
                     R$ {{ pageBook?.preco | number:'1.2-2' }}
                 </span>
                 
                 <div class="current-price-row">
-                    <span class="price">
-                        R$ {{ getPrecoComDesconto() | number:'1.2-2' }}
+                    <span class="price" *ngIf="(localUser?.isMember ? getPrecoComDesconto() : pageBook?.preco) as precoFinal">
+                        R$ {{ precoFinal | number:'1.2-2' }}
                     </span>
-                    <span class="discount-badge" *ngIf="pageBook?.discount">
+                    <span class="discount-badge" *ngIf="pageBook?.discount && localUser?.isMember">
                         {{ pageBook?.discount }}% OFF
                     </span>
                 </div>
-                <span class="premium-benefit" *ngIf="!pageBook?.discount && !localUser?.isMember">
+                <span class="premium-benefit" *ngIf="pageBook?.discount && !localUser?.isMember">
                     Assinantes Premium ganham até 50% OFF.
                 </span>
             </div>
