@@ -10,14 +10,47 @@ import { MembershipPage } from './pages/membership-page/membership-page';
 import { ComprarLivro } from './pages/comprar-livro/comprar-livro';
 
 export const routes: Routes = [
-  { path: '', component: Landing },
-  { path: 'home', component: Landing },
-  { path: 'login', component: Login },
-  { path: 'explorar', component: Explorar, canActivate: [AuthGuard]},
-  { path: 'grupo/:id', component: GroupPage, canActivate: [AuthGuard]},
-  { path: 'acervo', component: Books},
-  { path: 'cadastro', component: Cadastro},
-  { path: 'membership', component: MembershipPage},
-  { path: 'comprar-livro/:id', component: ComprarLivro},
-  { path: '**', redirectTo: '' }
+  {
+    path: '', 
+    component: Landing 
+  },
+  { 
+    path: 'home', 
+    component: Landing 
+  },
+  { 
+    path: 'login', 
+    component: Login 
+  },
+  { 
+    path: 'explorar', 
+    component: Explorar, 
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'grupo/:id', 
+    component: GroupPage, 
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'acervo', 
+    component: Books
+  },
+  { 
+    path: 'cadastro',
+    component: Cadastro
+  },
+  { 
+    path: 'membership', 
+    component: MembershipPage
+  },
+  { 
+    path: 'comprar-livro/:id', 
+    component: ComprarLivro, 
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**', 
+    redirectTo: '' 
+  }
 ];
