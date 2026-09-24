@@ -10,13 +10,14 @@
                 <span *ngFor="let tag of grupoTags"><b>{{ tag }}</b></span>
             </div>
         </div>
-        <button class="join-group" *ngIf="!userIsInGroup">Entrar no Grupo</button>
-        <button class="join-group" *ngIf="userIsInGroup">Sair do Grupo</button>
+        <button class="join-group" *ngIf="!userIsInGroup" (click)="entrarNoGrupo()">Entrar no Grupo</button>
+        <button class="join-group" *ngIf="userIsInGroup" (click)="sairDoGrupo()">Sair do Grupo</button>
     </div>
     
     <div class="group-wrapper">
         <div class="post-feed-container">
             <h3>Fórum de Discussões</h3>
+            <button class="new-post" *ngIf="userIsInGroup">Nova postagem</button>
             <input type="text" placeholder="Pesquisar...">
             <select>
                 <option>Filtrar opções</option>
@@ -24,7 +25,7 @@
                 <option>Mais gostados</option>
             </select>
             <div class="feed-body">
-                <p class="no-posts" *ngIf="!groupHasPosts">Não há nenhuma postagem...</p>
+                <p class="no-posts" *ngIf="!pageGroup?.posts">Não há nenhuma postagem...</p>
                 <div class="post" *ngFor="let post of pageGroup?.posts">
                     <span class="post-head">{{ post.autor }} - {{post.data}}</span>
                     <div class="post-body">

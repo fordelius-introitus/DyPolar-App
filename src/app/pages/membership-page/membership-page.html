@@ -34,7 +34,9 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="assine-premium-btn">Quero ser Premium</button>
+            <button class="assine-premium-btn" [disabled]="localUser?.isMember">
+                {{ localUser?.isMember ? 'Assinatura Ativa' : 'Quero ser Premium' }}
+            </button>
         </div>
         <div class="book-benefits-container">
             <div class="benefits-head">

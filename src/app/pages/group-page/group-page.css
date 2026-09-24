@@ -11,7 +11,7 @@
   display: inline-block;
   color: var(--dypolar-cinza-texto);
   text-decoration: none;
-  margin-top: 2rem;
+  margin: 2rem;
   width: 100%;
   font-size: 0.9rem;
 }
@@ -60,7 +60,7 @@
     color: #ffffff;
 }
 
-.join-group {  
+.join-group, .new-post {  
     max-width: 150px;
     padding: 10px;
     width: 100%;
@@ -110,8 +110,16 @@ button:hover {
     flex: 2; 
 }
 
+.desc-members-container {
+    white-space: pre-wrap;
+}
+
 .sources-container {
     flex: 1;
+}
+
+.new-post {
+    margin: 10px 0;
 }
 
 .post {
@@ -119,6 +127,7 @@ button:hover {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .post-body {

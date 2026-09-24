@@ -9,6 +9,35 @@ import { RouterLink } from '@angular/router';
 export class AuthService {
   private loggedUser: User | null = null;
 
+  @Injectable({
+  providedIn: 'root'
+})
+
+  adicionarGrupoAoUtilizador(tituloGrupo: string): void {
+    const user = this.getUser();
+    
+    if (user) {
+      if (!user.groups) {
+        user.groups = [];
+      }
+      
+      if (!user.groups.includes(tituloGrupo)) {
+        user.groups.push(tituloGrupo);
+        localStorage.setItem('userLogado', JSON.stringify(user));
+      }
+    }
+  }
+
+  removerGrupoDoUtilizador(tituloGrupo: string): void {
+    const user = this.getUser(); 
+    
+    if (user && user.groups) {
+      user.groups = user.groups.filter(titulo => titulo !== tituloGrupo);
+      localStorage.setItem('userLogado', JSON.stringify(user)); 
+    }
+  }
+
+
   login(email: string, password: string): boolean {
     const user = PlaceholderUsers.find(
       user => {
@@ -20,7 +49,7 @@ export class AuthService {
       this.loggedUser = user;
 
       localStorage.setItem(
-        'user',
+        'userLogado',
         JSON.stringify(user)
       );
       return true;
@@ -32,15 +61,15 @@ export class AuthService {
 
   logout(): void {
     this.loggedUser = null;
-    localStorage.removeItem('user');
+    localStorage.removeItem('userLogado');
   }
 
   isLogged(): boolean {
-    return localStorage.getItem('user') !== null;
+    return localStorage.getItem('userLogado') !== null;
   }
 
   getUser(): User | null {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem('userLogado');
 
     if (!user) {
       return null;

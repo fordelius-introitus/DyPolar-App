@@ -40,7 +40,7 @@ export const PlaceholderGroups: Group[] = [
     {
     id: '3',
     img: 'img/filosofia.jpg',
-    titulo: 'Estudo da filosofia clássica',
+    titulo: 'Estudo da filosofia clássica [UFBA]',
     descricao: 'Rodas de estudos sobre filosofia clássica situada na Grécia Antiga. Platonismo, metafísica etc. Encontros presenciais na UFBA.',
     compatibilidade: 40,
     membros: 45,
@@ -76,7 +76,7 @@ export const PlaceholderGroups: Group[] = [
     id: '5',
     img: 'img/aiethics.jpg',
     titulo: 'Ética e Viés Algorítmico em IA',
-    descricao: 'Grupo de pesquisa focado na discriminação algorítmica, reconhecimento facial e impactos da Inteligência Artificial no Brasil.',
+    descricao: "Grupo de pesquisa focado na discriminação algorítmica, reconhecimento facial e impactos da Inteligência Artificial no Brasil.",
     compatibilidade: 36,
     membros: 18,
     modalidade: 'Online',

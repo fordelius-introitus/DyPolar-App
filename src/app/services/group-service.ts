@@ -11,6 +11,22 @@ export class GroupService {
 
   constructor() {}
 
+  incrementarMembros(idGrupo: string): void {
+    const grupo = this.mock_groups.find(g => g.id === idGrupo);
+    if (grupo) {
+      grupo.userPertence = true;
+      grupo.membros++;
+    }
+  }
+
+  decrementarMembros(idGrupo: string): void {
+    const grupo = this.mock_groups.find(g => g.id === idGrupo);
+    if (grupo) {
+      grupo.userPertence = false;
+      grupo.membros--;
+    }
+  }
+
   getGroups(): Group[] {
     return this.mock_groups;
   }

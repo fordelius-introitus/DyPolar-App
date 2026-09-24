@@ -46,4 +46,24 @@ export class GroupPage implements OnInit {
     }
     console.log('ID do Grupo aberto:', this.grupoId);
   }
+
+  entrarNoGrupo(): void {
+    if (this.pageGroup) {
+      this.auth.adicionarGrupoAoUtilizador(this.pageGroup.titulo);
+      this.groupService.incrementarMembros(this.pageGroup.id);
+    
+      this.userIsInGroup = true; 
+    }
+  }
+
+  sairDoGrupo(): void {
+    if (this.pageGroup) {
+      // 1. Chama os serviços para remover e decrementar no LocalStorage
+      this.auth.removerGrupoDoUtilizador(this.pageGroup.titulo);
+      this.groupService.decrementarMembros(this.pageGroup.id);
+      
+      // 2. Atualiza o estado visual para esconder o botão de sair
+      this.userIsInGroup = false;
+    }
+  }
 }

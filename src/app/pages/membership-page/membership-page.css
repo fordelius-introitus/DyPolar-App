@@ -71,6 +71,13 @@
     background-color: rgb(199, 172, 0);
 }
 
+.assine-premium-btn:disabled {
+    cursor: auto;
+    background-color: rgba(238, 206, 0, 0.425);
+    border: 1px solid rgb(199, 172, 0);;
+    color: rgb(104, 90, 0);;
+}
+
 .book-benefits-container {
     max-width: 450px;
     width: 100%;

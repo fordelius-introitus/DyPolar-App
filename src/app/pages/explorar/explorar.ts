@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth';
 import { Router, RouterLink } from '@angular/router';
 import { GroupService } from '../../services/group-service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-explorar',
@@ -20,7 +21,7 @@ export class Explorar implements OnInit {
   termoBusca: string = '';
   modalidadeSelecionada: string = 'Todas';
 
-  loggedUser = false;
+  loggedUser: User | null = null;
   
   constructor(private auth:AuthService, private router:Router, private groupService:GroupService) {}
 
@@ -35,8 +36,7 @@ export class Explorar implements OnInit {
   gruposFiltrados: Group[] = [];
 
   pertenceAoGrupo(tituloGrupo: string): boolean {
-    const user = this.auth.getUser();
-    return user?.groups?.includes(tituloGrupo) ?? false;
+    return this.loggedUser?.groups?.includes(tituloGrupo) ?? false;
   }
 
   checarGrupos(): void {
@@ -46,13 +46,13 @@ export class Explorar implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loggedUser = this.auth.isLogged();
-
+    this.loggedUser = this.auth.getUser();
     this.site_grupos = this.groupService.getGroups();
-    this.gruposFiltrados = [...this.site_grupos];
-
-    this.checarGrupos();
+    
+    this.checarGrupos(); 
     this.verificarCompatibilidade();
+
+    this.gruposFiltrados = [...this.site_grupos];
   }
 
   verificarCompatibilidade(): void {
